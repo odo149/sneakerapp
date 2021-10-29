@@ -6,41 +6,31 @@ export default function Login({navigation}) {
   return (
     <View style={styles.container}>
 
-      <ImageBackground 
-      blurRadius={30}
-      justifyContent={'space-evenly'}
-      source={require("./assets/CONVERSE.png")}>
-
+        <View>
         <Text style={{
           fontSize: 40,
-          color: 'black'
+          color: 'black',
+          fontWeight: 'bold',
+          paddingBottom: 20
           }}>Hello sneakerhead!
         </Text>
-        <Text style = {{
-          fontSize: 25,
-          color: 'black'
-          }}>username or email
-        </Text>
-        <View style= {{
-        backgroundColor: '#e8e9eb',
-        borderRadius: 20,
-        padding: 20,
-        width: 370
-      }}>
+        </View>
+      <ImageBackground 
+      blurRadius={50}
+      style={{height:350,alignContent:'center',justifyContent:'center'}}
+      justifyContent={'space-evenly'}
+      source={require("./assets/converseb.png")}>
+        <Text style = {styles.textstyle}>username or email</Text>
+        <View style= {styles.input}>
         <TextInput 
           placeholder= "username or email"
         />
       </View>
-      <Text style = {{
-        fontSize: 25,
-        color: 'black'
-      }}>password</Text>
-      <View style= {{
-        backgroundColor: '#e8e9eb',
-        borderRadius: 20,
-        padding:20,
-        width: 370
-      }}>
+
+      <View style={{paddingTop: 20}}>
+      <Text style = {styles.textstyle}>password</Text>
+      </View>
+      <View style= {styles.input}>
         <TextInput 
         placeholder = 'password'
         secureTextEntry= {true}/>
@@ -48,8 +38,8 @@ export default function Login({navigation}) {
       </ImageBackground>
       <View style = {{paddingTop: 50,
       width: 370,
-      elevation: 300}}>
-        <Button
+      elevation: 5000}}>
+        <Button        
             onPress={() => navigation.navigate('Home')}
             title = "SIGN IN"
             color = "#241f1f"/>
@@ -68,4 +58,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+    backgroundColor: '#e8e9eb',
+    borderRadius: 20,
+    padding:20,
+    width: 370
+  },
+  textstyle: {
+    fontSize: 25,
+    color: 'black',
+    fontWeight: 'bold'
+  }
+
 });
