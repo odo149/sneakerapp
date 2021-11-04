@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text,FlatList, View, Image } from 'react-native';
+import { StyleSheet, Text,FlatList,TouchableOpacity, View, Image } from 'react-native';
 
 const SNEAKERadidas =  [{
   id: "d50e8022543e46b28c85ad2600b44567_9366",
@@ -42,9 +42,13 @@ const SNEAKERadidas =  [{
 
 const renderItem = ({ item }) => (
   <View style={styles.nikeshoes}>
+    <TouchableOpacity>
+      <View style={styles.adidashoes}>
     <Image resizeMode='contain' style={{height:300,width:400}} source={{uri:item.picture}}/>
     <Text style={styles.itemstyle}>{item.title}</Text>
     <Text>{item.price}</Text>
+      </View>
+    </TouchableOpacity>
   </View>
 );
 
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  nikeshoes: {
+  adidashoes: {
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
