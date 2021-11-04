@@ -1,6 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text,FlatList,TouchableOpacity, View, Image } from 'react-native';
+import { Feather } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { StyleSheet, Text,FlatList,TouchableOpacity, View, Image, TextInput } from 'react-native';
 
 const SNEAKERadidas =  [{
   id: "d50e8022543e46b28c85ad2600b44567_9366",
@@ -55,6 +57,26 @@ const renderItem = ({ item }) => (
 export default function Adidasshop() {
   return (
     <View style={styles.container}>
+      <View style={{
+        flexDirection:'row',
+        backgroundColor:'#e8e9eb',
+        marginTop:30,
+        marginBottom:30,
+        padding:20,
+        borderRadius:30,
+        width:350}}>
+        <View stlye={{flex:3,padding:20}}>
+        <AntDesign name="search1" size={24} color="black" />
+        </View>
+        <View style={{flex:7,alignContent:'flex-start',width:300}}>
+        <TextInput style={{color:'black'}} placeholder='Search here'/>
+        </View>
+        <TouchableOpacity>
+        <View style={{flex:1}}>
+        <Feather name="menu" size={24} color="black" />
+        </View>
+        </TouchableOpacity>
+      </View>
       <FlatList
         data={SNEAKERadidas}
         renderItem={renderItem}
@@ -76,6 +98,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingBottom:20
   },
   itemstyle: {
     fontSize:18
